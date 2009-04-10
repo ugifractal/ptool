@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Jul 12, 2008 4:00:30 PM                                                        
+
+     phone    
+     description
+                   
+     ugi                                                                
+     ====================================================================== -->
+<project name="ptools" default="default">
+	
+    <description>
+            description
+    </description>
+	<property name="main-class" value="ptools.Main"/>
+    <!-- ================================= 
+          target: default              
+         ================================= -->
+		
+	<path id="libraries">
+          <fileset dir="libs">
+              <include name="*.jar"/>
+          </fileset>
+     </path>
+	
+	<target name="run" depends="clean,jar">
+       <java jar="ptools.jar" fork="true"/>
+    </target>
+
+	<target name="compile">
+        <mkdir dir="bin"/>
+        <javac srcdir="src" destdir="bin"
+	 				classpathref="libraries"/>
+		<copy todir="bin">
+	         <fileset dir="src">
+				<include name="images/*"/>
+				<include name="resources/*"/>
+			 </fileset>
+	    </copy>
+    </target>
+
+	<target name="jar" depends="compile">
+       	<jar destfile="ptools.jar" basedir="bin">
+   	           <manifest>
+   	              <attribute name="Main-Class" value="${main-class}"/>
+   	           </manifest>
+   	       </jar>
+    </target>
+	
+	<target name="clean">
+       	<delete dir="bin"/>
+	    <delete dir="ptools.jar"/>
+    </target>
+
+</project>
