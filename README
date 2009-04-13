@@ -1,0 +1,29 @@
+ptools is a very simple java swing (GUI) application.
+------------------------------------------------------
+The main purpose this application is to provide programmer use their own jruby script to be called from ptools window.
+So we can only use jruby script to create java swing application.
+
+Prerequirement
+----------------
+- Java Runtime environment
+
+Installation
+------------------
+git clone git://github.com/ugifractal/ptool.git
+
+Running
+-----------
+cd ptool
+java -jar ptools.jar
+
+when the window opened, just click "Reload" menu, then a sample map application will visible.
+
+To create your own jruby script, please take a look at "scripts/initializer.rb"
+It contain jruby script that will be executed by ptool
+
+
+Libraries.
+-------------
+profligacy: to create easy GUI based pattern
+swingx-ws: to create map
+RXTXcomm: to communicate with serial port
