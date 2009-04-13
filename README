@@ -1,7 +1,7 @@
 ptools is a very simple java swing (GUI) application.
 ------------------------------------------------------
 The main purpose this application is to provide programmer use their own jruby script to be called from ptools window.
-So we can only use jruby script to create java swing application.
+So we can use jruby script to create java swing application.
 
 Prerequirement
 ----------------
